@@ -30,7 +30,16 @@
             <version>1.3</version>
             <scope>test</scope>
         </dependency>
-        
+
+        <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco -->
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco</artifactId>
+            <version>0.8.5</version>
+            <type>pom</type>
+        </dependency>
+
+
     </dependencies>
 	
     <reporting>
@@ -48,7 +57,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.7.201606060606</version>
+                <version>0.7.4.201502262128</version>
                 <executions>
                     <execution>
                         <goals>

@@ -7,5 +7,13 @@ public final class Tuple {
     public Tuple(String term, int weight) {
         this.term = term;
         this.weight = weight;
-    }  
+    }
+
+    public String getWord() {
+        return term;
+    }
+
+    public int getValue() {
+        return weight;
+    }
 }

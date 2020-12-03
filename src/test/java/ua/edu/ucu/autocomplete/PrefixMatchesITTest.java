@@ -31,11 +31,11 @@ public class PrefixMatchesITTest {
 
         assertThat(result, containsInAnyOrder(expResult));
 
-        System.out.println(pm.contains("abc"));
-        pm.delete("abc");
-        System.out.println(pm.contains("abc"));
+        assertTrue(pm.contains("abcdef"));
+        pm.delete("abcdef");
+        assertFalse(pm.contains("abcdef"));
 
-        System.out.println(pm.size());
+        assertEquals(pm.size(), 4);
     }
 
     @Test

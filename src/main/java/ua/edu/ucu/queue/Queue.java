@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-public class Queue<E> implements Iterable<E>{
+public class Queue <E> implements Iterable <E> {
     private ImmutableLinkedList content;
 
     public Queue() {
@@ -15,7 +15,7 @@ public class Queue<E> implements Iterable<E>{
         return new QuIterator<E>();
     }
 
-    private final class QuIterator<E>  implements Iterator<E>{
+    private final class QuIterator <E>  implements Iterator <E> {
         private Node curr;
         QuIterator() {
             this.curr = content.getTail();
@@ -26,12 +26,14 @@ public class Queue<E> implements Iterable<E>{
         }
 
         public E next() {
-            if (this.curr == null)
+            if (this.curr == null) {
                 throw new NullPointerException();
+            }
             this.curr = this.curr.getNext();
             E e = (E) this.curr.getData();
-            if (this.curr == content.getTail())
+            if (this.curr == content.getTail()) {
                 this.curr = null;
+            }
             return e;
         }
 

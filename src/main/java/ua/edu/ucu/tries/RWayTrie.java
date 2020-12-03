@@ -88,9 +88,13 @@ public class RWayTrie implements Trie {
     }
 
     private Node delete(Node x, String word, int ln) {
-        if (x == null) return null;
+        if (x == null) {
+            return null;
+        }
         if (ln == word.length()) {
-            if (x.val != null) size--;
+            if (x.val != null) {
+                size--;
+            }
             x.val = null;
         }
         else {
@@ -98,10 +102,14 @@ public class RWayTrie implements Trie {
             x.next[c] = delete(x.next[c], word, ln + 1);
         }
 
-        if (x.val != null) return x;
-        for (int c = 0; c < R; c++)
-            if (x.next[c] != null)
+        if (x.val != null) {
+            return x;
+        }
+        for (int c = 0; c < R; c++) {
+            if (x.next[c] != null) {
                 return x;
+            }
+        }
         return null;
     }
 

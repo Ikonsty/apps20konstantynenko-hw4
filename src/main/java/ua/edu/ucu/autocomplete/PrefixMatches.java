@@ -5,6 +5,7 @@ import ua.edu.ucu.tries.Tuple;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -28,12 +29,10 @@ public class PrefixMatches {
         return 1;
     }
 
-//    public int load(String[] strings) {
-//        for (String st: strings) {
-//            load(st);
-//        }
-//        return 1;
-//    }
+    public int load(String strings) {
+        String[] str = strings.split(" ");
+        return load(str);
+    }
 
     public boolean contains(String word) {
         return this.trie.contains(word);

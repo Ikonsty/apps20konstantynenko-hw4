@@ -33,6 +33,11 @@ public class RWayTrieTest {
         System.out.println(rw.words());
 
         System.out.println(rw.size());
+
+        Iterable<String> result = rw.wordsWithPrefix("abc");
+
+        String[] expResult = {"abc", "abcd",};
+        assertThat(result, containsInAnyOrder(expResult));
     }
 
 }

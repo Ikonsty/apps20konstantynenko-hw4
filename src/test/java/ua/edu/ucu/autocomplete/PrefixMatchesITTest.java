@@ -18,7 +18,7 @@ public class PrefixMatchesITTest {
     @Before
     public void init() {
         pm = new PrefixMatches(new RWayTrie());
-        pm.load("abc", "abce", "abcd", "abcde", "abcdef", "a");
+        pm.load("abc", "abce", "abcd", "abcde", "abcdef");
     }
 
     @Test
@@ -30,12 +30,6 @@ public class PrefixMatchesITTest {
         String[] expResult = {"abc", "abce", "abcd", "abcde", "abcdef"};
 
         assertThat(result, containsInAnyOrder(expResult));
-
-        System.out.println(pm.contains("abc"));
-        pm.delete("abc");
-        System.out.println(pm.contains("abc"));
-
-        System.out.println(pm.size());
     }
 
     @Test

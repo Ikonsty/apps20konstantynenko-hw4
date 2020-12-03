@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-public class Queue <E> implements Iterable <E> {
+public class Queue<E> implements Iterable<E> {
     private ImmutableLinkedList content;
 
     public Queue() {
@@ -15,7 +15,7 @@ public class Queue <E> implements Iterable <E> {
         return new QuIterator<E>();
     }
 
-    private final class QuIterator <E>  implements Iterator <E> {
+    private final class QuIterator<E>  implements Iterator<E> {
         private Node curr;
         QuIterator() {
             this.curr = content.getTail();
@@ -37,7 +37,7 @@ public class Queue <E> implements Iterable <E> {
             return e;
         }
 
-        public void forEach(Consumer<? super E> consumer) {
+        public void forEach(Consumer<?super E> consumer) {
 
         }
 
@@ -47,14 +47,14 @@ public class Queue <E> implements Iterable <E> {
     }
 
     public Object peek() {
-        if (content.getHead() == null){
+        if (content.getHead() == null) {
             throw new ArrayIndexOutOfBoundsException("No peek is here");
         }
         return content.getHead();
     }
 
     public Object dequeue() {
-        if (content.getHead() == null){
+        if (content.getHead() == null) {
             throw new ArrayIndexOutOfBoundsException("No elements are here");
         }
         Object value = content.getHead();

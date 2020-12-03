@@ -58,7 +58,7 @@ public class PrefixMatches {
 
         while (iter.hasNext()) {
             String el = iter.next();
-            if (pref.length() + k - 1 >= el.length() ) {
+            if (pref.length() + k - 1 >= el.length()) {
                 result.add(el);
             }
         }
